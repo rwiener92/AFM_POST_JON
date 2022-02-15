@@ -1,0 +1,83 @@
+Version 2 attempts to fit the contact point better.
+
+2020-05-19: Added a check on the baseline deflection calculation based on the
+standard deviation of the poitns considered.
+
+Version 2.1
+
+2020-05-19: Adds the option of calculating modulus assuming ideal
+Hertzian contact. That is, fitting the data to the best fit quadratic
+rather than the actual raw data.
+
+2020-05-19: Fixed a missing parentheses in modulus calculation that was
+causing Elastic modulus to trend to 0
+2020-05-20: changed some font sizes in plots, turned off warnings and
+beginning and back on at end of script.
+
+Version 2.2 
+2020-05-21: Changed the main loop from for to parfor and added graphical
+visualization of all data with imagesc plot at the end.
+
+
+--------------------
+
+Version 3
+
+2020-05-26: Major changes to the flow. Create an input file that is read outside
+that contains the parameters, inputs, options, etc. Divide segments up into 
+individual codes separate from the main script. Also changed how iteration was performed - 
+no longer going through a list of strings.
+
+2020-05-27: Changes to how quadratic fit is added. Changed some of the segments into an outside function call.
+Added the option of calculating the results for pointwise and fitted data. Added imagesc plots at the end.
+
+Version 3.1: Adding in the ability to save plots.
+2020-05-29: Added the option to calculate a single E calculation by using linearized form of the equations.
+2020-06-02: Stored contact points to be able to plot height.
+
+Version 3.2: 
+2020-06-02: Changed how the single point (Hertzian) Elastic modulus is calculated. Previously, it was fit to a quadratic curve.
+Seeing as this only makes sense in the cone case, I removed this and there is no fitting applied.
+-calc_E_app now has a plotting option to it for looking at the linearized form when assuming Hertz.
+
+2020-06-04: Switched back to using segment index for defining end of indentation. If using previous method, which 
+defines the end as when the  piezo voltage stops increasing, can lead to decreasing depth in the indentaiton. 
+See https://mynotebook.labarchives.com/share/Jonathan%2520Haydak's%2520Book/OTYuMnw1NDM0MjIvNzQtNDA5L1RyZWVOb2RlLzE0NjU5MjY1NDd8MjQ0LjI=
+-Changed the plotting to reverse the y axis, so as to compare with images from IGOR (origin for Igor is bottom left, not top left)
+-Add the ability to return r^2 for linear single value Hertzian Elastic modulus calculation
+
+2020-06-05: Fixed issue where one row and one column of data were being ignored because of off by one error.
+2020-06-06: By fixing the issue, I realize now that some of the force curves are missing that were overlooked before.
+This is causing the code to error out. I will have to add a line of code for error checking.
+- Run into the issue of VERY early indentations : add error checking to filter out these cases.
+
+H5G_loc_find_cb
+    object '45:0' doesn't
+    exist
+    H5G_traverse_real
+    traversal operator failed
+    H5G_traverse
+    internal path traversal
+    failed
+    H5G_loc_find
+    can't find object
+    H5Dopen2             not
+    found
+
+2020-06-11: Save the Ratio of Variance and extension plot in a cell array
+
+2020-06-14: I was using any(contains(FCnames_str,this))) to check that the h5 file contained the indentation.
+However, this is wrong. For example : indentation '3:53' is missing, but '23:53' is present - will get a false positive.
+CHANGED to any(strcmp(FCnames_str,this)).
+
+2021-04-12: Added some goddamn explanation of what the fucking variables that are saved mean.
+
+---
+
+Version 4:
+
+2021-04-20 : After meeting with Rob + Smiti, the program sometimes omits significant portions of precontact curve. PAY ATTENTION to # of points considered.
+
+2021-04-21 : Bug where if the desired number of points > number of points in raw file it would return empty values. Fixed this. Problem with with offsetting a negative index.
+
+2021-04-22 : Changed behaviour so that if MAX_DEFL_FIT is not met, it will use the entire force curve.
