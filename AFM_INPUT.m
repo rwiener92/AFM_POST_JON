@@ -1,28 +1,24 @@
 %% Runtime parameters related to File I/O, graphics, etc
 
-h5_file_loc ="D:\Microsopy\AFM\Patterns_Smiti_April_2021\210423\Dten00.h5";
-%h5_file_loc = "D:\Microsopy\AFM\Patterns_Smiti_April_2021\cell_00200.h5";
-PLOT_OPT =  0; % 1 makes plot, 0 doesn't.
+h5_file_loc ="C:\Users\Rob\Desktop\Primary HAOSMC\Adult\220722\AFM\d1_ADF00.h5";
+
+PLOT_OPT =  1; % 1 makes plot, 0 doesn't.
 FontSize = 10;
 % If the data is saved, it will save all force curves, all maps, r^2
 % values, as either single/double array. The force curves are stored into a
 % cell array.
 SAVE_OPT = 1 ; % 1 saves, 0 doesn't
-SAVE_NAME = 'Dten00.mat';
+SAVE_NAME = 'hz_ADF00.mat';
 
 % A note on the saved results
-% F_Matrix (cell array) : contains the Force of deflection of cantilever (To make Force
-% vs Depth)
+% F_Matrix (cell array) : contains the Force of deflection of cantilever (To make Force vs Depth)
 % D_Matrix (cell array) : contains the indentation depth vectors for each indentation
 % E_Matrix (double array) : contains last value (deepest value) of the point wise modulus 
-% Ext_Matrix (cell array) : vector of the raw extension values for each
-% indentation
-% ExtDefl_Matrix (cell array) : vector of the deflection values for each
-% indentation
-%CP_Matrix (double array) : contact points
+% Ext_Matrix (cell array) : vector of the raw extension values for each indentation
+% ExtDefl_Matrix (cell array) : vector of the deflection values for each indentation
+% CP_Matrix (double array) : contact points
 % Height_Matrix : visualization of relative heights based on contact points
-% PWE_Matrix (cell array) : contains vector of pointwise modulus for each
-% indentationj
+% PWE_Matrix (cell array) : contains vector of pointwise modulus for each indentation
 
 
 
@@ -59,12 +55,12 @@ ROV_INTERVAL_N = 10;
 R = 20; % Radius of curvature (nm) https://www.nanoandmore.com/AFM-Probe-PNP-TR
 th = 20*pi/180; % Cone semi-angle
 b = R*cos(th); % Cylindrical radius %%double check
-v = .5; % Poisson ratio
+v = .45; % Poisson ratio
 
-%% Parameters for modulus calculation
+%% Parameters for modulus calculation 
 
 
-MODEL_QUADRATIC_FIT = 0;
+MODEL_QUADRATIC_FIT = 3;
 % This parameter allows you to fit the Force-Depth curve.
 % 0: Pointwise, uses raw data
 % 1: Pointwise, Quadratic fit
