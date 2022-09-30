@@ -455,7 +455,7 @@ parfor i = 1:nCols
         end
     end
     
-    s = '%.2f percent done processing.';
+    s = '%.2f percent left to process.';
     s = sprintf(s,i/nCols*100);
     disp(s)
     

@@ -1,6 +1,6 @@
 %% Runtime parameters related to File I/O, graphics, etc
 
-h5_file_loc ="C:\Users\Rob\Desktop\Primary HAOSMC\Adult\220722\AFM\d1_ADF00.h5";
+h5_file_loc ="C:\Users\Rob\Desktop\Primary HAOSMC\Adult\220729\220729 AFM\h5_mat_files\d2_CAM09.h5";
 
 PLOT_OPT =  1; % 1 makes plot, 0 doesn't.
 FontSize = 10;
@@ -8,7 +8,7 @@ FontSize = 10;
 % values, as either single/double array. The force curves are stored into a
 % cell array.
 SAVE_OPT = 1 ; % 1 saves, 0 doesn't
-SAVE_NAME = 'hz_ADF00.mat';
+SAVE_NAME = 'd2_CAM09.mat';
 
 % A note on the saved results
 % F_Matrix (cell array) : contains the Force of deflection of cantilever (To make Force vs Depth)
