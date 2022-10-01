@@ -1,0 +1,27 @@
+RJW_AFM_Analysis_Ideas
+
+08/04/2022
+
+Q: Create shell script to multiconvert (all in directory) using ARDFtoHDF5.exe
+A: Done, ps file now in github directory
+
+Q: Show me math for AFM tip parameters [AFM_INPUT.m]
+A: (Jon) From KDC AZ paper for calculation and implementation
+
+Q: Heatmaps are flipped along x-axis when compared to matrix data [AFM_POST_JONv4.m]
+
+
+Q: How to change depth considered for PWM ?
+A: (Jon) Stops around trigger point
+
+Q: How to recreate F-D with hertz fit -and- PWM points ?
+A: (Jon) see 'calc_E_app' for where linear versions are calculated
+
+Q: Based on 'calc_E_app' answer can we compare PWM to Hertz_Lin (% difference) using rsq as Hertz Filter ?
+A: I implemented this in a basic analysis for only Hertz_lin fit data, but did not compare to PWM. I think the D_max PWM will be comparable to the Hertz_lin fit and moving forward will use PWM.
+"load('ADF00.mat'); if sum(sum((rsq_Matrix>0.95)))>7 median(E_Matrix(rsq_Matrix>0.95)), else  sprintf('NaN'), end"
+
+
+
+
+
