@@ -1,7 +1,7 @@
 RJW_AFM_Analysis_Ideas
 
 08/04/2022
-
+-----------
 Q: Create shell script to multiconvert (all in directory) using ARDFtoHDF5.exe
 A: Done, ps file now in github directory
 
@@ -21,7 +21,20 @@ Q: Based on 'calc_E_app' answer can we compare PWM to Hertz_Lin (% difference) u
 A: I implemented this in a basic analysis for only Hertz_lin fit data, but did not compare to PWM. I think the D_max PWM will be comparable to the Hertz_lin fit and moving forward will use PWM.
 "load('ADF00.mat'); if sum(sum((rsq_Matrix>0.95)))>7 median(E_Matrix(rsq_Matrix>0.95)), else  sprintf('NaN'), end"
 
+================================================================================================
 
+10/01/2022
+-----------
+
+IDEA: ML for contact-point detection
+
+
+IDEA: Transfer function modeling fit to different segments of a high-res monolayer force-map (PWM)
+	?? can we partition the entire force-map histogram into various cell segments ??
+	?? will combining ML & transfer function modeling allow us to predict what we are indenting... maybe use image based (FM and Bright field) to identify what each force-point should be labeled (to create database) ??
+
+
+IDEA: Combine Transfer function modeling (for PWM curve) & Biochemical mathematical modeling (for cell stiffness)
 
 
 
