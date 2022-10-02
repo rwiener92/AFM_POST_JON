@@ -37,4 +37,7 @@ IDEA: Transfer function modeling fit to different segments of a high-res monolay
 IDEA: Combine Transfer function modeling (for PWM curve) & Biochemical mathematical modeling (for cell stiffness)
 
 
+IDEA: Image-ML to indentify cell properties (e.g. SMC phenotype, cell cycle, morphometrics)... maybe AFM with live trackers?
+		--> Use to filter/classify what force curve measures
+
 
