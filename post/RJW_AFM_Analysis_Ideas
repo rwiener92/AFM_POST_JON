@@ -21,6 +21,10 @@ Q: Based on 'calc_E_app' answer can we compare PWM to Hertz_Lin (% difference) u
 A: I implemented this in a basic analysis for only Hertz_lin fit data, but did not compare to PWM. I think the D_max PWM will be comparable to the Hertz_lin fit and moving forward will use PWM.
 "load('ADF00.mat'); if sum(sum((rsq_Matrix>0.95)))>7 median(E_Matrix(rsq_Matrix>0.95)), else  sprintf('NaN'), end"
 
+Q: [AFM_POST_JONv4] edit so MODEL_QUADRATIC_FIT = 2 saves : PWE_matrix, PWE_E @ max depth, quadratic_fit_E ?
+
+Q: Edit [AFM_POST_JONv4] so it cotinues after erorr (Quadratic_PWM errors/stops, but Raw_PWM does not)?
+
 ================================================================================================
 
 10/01/2022
