@@ -125,7 +125,7 @@ for k=1:length(Files)
 % load file
 load(FileName)
 clear E_appt_med E_filt name
-save(FileName, '-regexp', '^(?!(Files)$).')
+save(FileName, '-regexp', '^(?!(j|k|Files)$).') %change "Files" to detele another var
 %%%%%
 end
 %}

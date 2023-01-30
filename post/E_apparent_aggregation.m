@@ -30,9 +30,10 @@ AngTh_Matrix{6,k+1} = Percentage_nan;
 
 
 %%%%%
-save AngTh_Matrix
+%save AngTh_Matrix
+save('AngTh_Matrix', '-regexp', '^(?!(j|k)$).') %change "Files" to detele another var
 %%%%%
 end
 
 % average apparent modulus of group
-mean(cell2mat(AngTh_Matrix(5,2:end)))
+nanmean(cell2mat(AngTh_Matrix(5,2:end)))
