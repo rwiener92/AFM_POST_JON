@@ -5,13 +5,13 @@ function E_app_analysis()
 % Filter out unwanted data
 % Check/eliminate if cell data is incomplete
 % Append apparent cell modulus to cell file (.mat)
-% NOTE: Working directory should containly only .mat files analyzed by one mthods (e.g. raw_pointwise=0 from AFM_INPUT)
+% NOTE: Working directory should containly only .mat files analyzed by one method (e.g. raw_pointwise=0 from AFM_INPUT)
 %
 %   Appends:
 %       1. E_apparent_med (initial median apparent modulus)
 %       2. E_apparent_stats (initial descriptive statistics of E_Matrix)
 %       3. E_filt_Matrix
-%       4. E_apparent_filt_med (median apparent modulus after filtering)
+%       4. E_apparent_filt_med (median apparent modulus after filtering) **USE THIS VALUE FOR CELL**
 %       5. % of NaNs
 %       6. FileName
 %
