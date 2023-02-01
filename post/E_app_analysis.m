@@ -117,8 +117,7 @@ end
 
 
 %{
-%%%%% NOTE FOR EXISTING LIN_HERTZ DELETE "E_appt_med" and "E_filt"
-% Use this for deleting specific vars from existing .mat files
+%%%%% Use this for deleting specific vars from existing .mat files %%%%%
 Files=dir('*.mat*');
 for k=1:length(Files)
    FileName=Files(k).name
