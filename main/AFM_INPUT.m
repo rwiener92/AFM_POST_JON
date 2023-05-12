@@ -1,14 +1,14 @@
 %% Runtime parameters related to File I/O, graphics, etc
 
-h5_file_loc ="C:\Users\Rob\OneDrive\Documents\Costa Lab\RESEARCH PROJECTS\sc-Seq iPSC-ASMC Origin & Age (Qiu)\Data\AFM\221223\iPSC\h5\d1_WT09_00.h5";
+h5_file_loc ="C:\Users\Rob\OneDrive\Documents\Costa Lab\RESEARCH PROJECTS\sc-Seq iPSC-ASMC Origin & Age (Qiu)\Data\AFM\230505\WT09_d2_00\WT09_d2_00.h5";
 
-PLOT_OPT =  1; % 1 makes plot, 0 doesn't.
+PLOT_OPT =  0; % 1 makes plot, 0 doesn't.
 FontSize = 10;
 % If the data is saved, it will save all force curves, all maps, r^2
 % values, as either single/double array. The force curves are stored into a
 % cell array.
 SAVE_OPT = 1 ; % 1 saves, 0 doesn't
-SAVE_NAME = 'd1_WT09.mat';
+SAVE_NAME = 'WT09_d2_00.mat';
 
 % A note on the saved results
 % F_Matrix (cell array) : contains the Force of deflection of cantilever (To make Force vs Depth)
