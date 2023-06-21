@@ -25,7 +25,7 @@ SAVE_NAME = 'WT09_d1_02_MQF3.mat';
 
 %% Parameters for finding the contact point.
 
-CONTACT_METHOD_OPT = 2;
+CONTACT_METHOD_OPT = 1;
 %1: Least square fit to linear-quadratic piecewise function
 %2: Uses ratio of variance method
 
