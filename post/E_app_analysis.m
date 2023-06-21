@@ -5,7 +5,7 @@ function E_app_analysis()
 % Filter out unwanted data
 % Check/eliminate if cell data is incomplete
 % Append apparent cell modulus to cell file (.mat)
-% NOTE: Working directory should containly only .mat files analyzed by one method (e.g. raw_pointwise=0 from AFM_INPUT)
+% NOTE: Working directory should containly only .mat files analyzed by one MQF method (e.g. raw_pointwise=0 from AFM_INPUT)
 %
 %   Appends:
 %       1. E_apparent_med (initial median apparent modulus)
@@ -15,8 +15,6 @@ function E_app_analysis()
 %       5. % of NaNs
 %       6. FileName
 %
-%   OPTIONS:
-%       Add: ?? rsq_cutoff, outlier_filters, E_app_stats ??
 %
 % SAVE AS: Appended variables to same .mat file
 % 
@@ -65,8 +63,8 @@ E_apparent_med = nanmedian(E_Matrix, 'all');
 E_filt_Matrix = E_Matrix; % initialize filter matrix
 if exist('rsq_Matrix','var')
 
-	% 1. NaN filter E values with under 95% R2
-	E_filt_Matrix(rsq_Matrix<0.95) = NaN;
+	% 1. NaN filter E values with under X% R2
+	E_filt_Matrix(rsq_Matrix<0.90) = NaN;
 
 	% 2. NaN filter E values for outliers ( E_apparent_stats{1,7} )
 	E_filt_Matrix(isoutlier(E_Matrix)) = NaN;
