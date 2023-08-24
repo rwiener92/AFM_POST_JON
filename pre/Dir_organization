@@ -1,0 +1,14 @@
+
+# In exp date directory
+# Create folders (/ARDF, /h5, imgs) within each subdirectory for each celltype
+for dir in */; do
+     mkdir -p "$dir/ARDF"
+     mkdir -p "$dir/h5"
+     mkdir -p "$dir/imgs"
+done
+
+#move all ARDF files into that dir
+mv *.ARDF ./ARDF
+mv *.h5 ./h5
+mv *.jpg ./imgs
+
