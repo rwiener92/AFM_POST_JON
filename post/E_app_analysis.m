@@ -61,10 +61,11 @@ E_apparent_med = nanmedian(E_Matrix, 'all');
 % 2. Filter outliers ( E_apparent_stats{1,7} )
 % 3. NaN "E_apparent_filt_med" if over half is bad
 E_filt_Matrix = E_Matrix; % initialize filter matrix
+rsq_level = 0.95;
 if exist('rsq_Matrix','var')
 
 	% 1. NaN filter E values with under X% R2
-	E_filt_Matrix(rsq_Matrix<0.90) = NaN;
+	E_filt_Matrix(rsq_Matrix<rsq_level) = NaN;
 
 	% 2. NaN filter E values for outliers ( E_apparent_stats{1,7} )
 	E_filt_Matrix(isoutlier(E_Matrix)) = NaN;
@@ -101,7 +102,7 @@ Percentage_nan = sum(isnan(E_filt_Matrix),'all') / numel(E_filt_Matrix);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%% SAVING %%%%%%%%%%%%%
-save(FileName, 'E_apparent_med', 'E_apparent_stats', 'E_filt_Matrix', 'E_apparent_filt_med', 'Percentage_nan', 'FileName', '-append')
+save(FileName, 'rsq_level', 'E_apparent_med', 'E_apparent_stats', 'E_filt_Matrix', 'E_apparent_filt_med', 'Percentage_nan', 'FileName', '-append')
 %   Appends:
 %       1. E_apparent_med (initial median apparent modulus)
 %       2. E_apparent_stats (initial descriptive statistics of E_Matrix)
