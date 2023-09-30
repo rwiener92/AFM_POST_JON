@@ -1,0 +1,9 @@
+
+%%%% MATLAB can use this review individual force curves from a hertz fit (MQF3) %%%%
+% row and col correspond to the forcemap point 
+row=1;
+col=1;
+figure; subplot(1,2,1); plot(Ext_Matrix{row,col}, ExtDefl_Matrix{row,col}); subplot(1,2,2); plot(D_Matrix{row,col}, F_Matrix{row,col});
+
+
+
