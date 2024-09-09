@@ -1,6 +1,6 @@
 %% Runtime parameters related to File I/O, graphics, etc
 
-h5_file_loc ="MFS_Cell01.h5";
+h5_file_loc ="MFS_Cell02.h5";
 %h5_file_loc ="C:\Users\rwien\OneDrive\Documents\Costa Lab\RESEARCH PROJECTS\sc-Seq iPSC-ASMC Origin & Age (Qiu)\Data\AFM\230505\WT09_d1_02\WT09_d1_02.h5";
 
 PLOT_OPT =  1; % 1 makes plot, 0 doesn't.
@@ -9,7 +9,7 @@ FontSize = 10;
 % values, as either single/double array. The force curves are stored into a
 % cell array.
 SAVE_OPT = 1 ; % 1 saves, 0 doesn't
-SAVE_NAME = 'MFS_Cell01_MQF3.mat';
+SAVE_NAME = 'MFS_Cell02_MQF3.mat';
 
 % A note on the saved results
 % F_Matrix (cell array) : contains the Force of deflection of cantilever (To make Force vs Depth)
